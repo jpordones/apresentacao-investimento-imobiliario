@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investimento Imobiliário - Oportunidade Estratégica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .slide:hover {
+            transform: translateY(-5px);
+        }
+
+        .slide-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .slide-subtitle {
+            font-size: 1.8em;
+            color: #4ecdc4;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: #1a1a2e;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: #1a1a2e;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table tr:first-child td {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: #1a1a2e;
+            font-weight: bold;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transform: perspective(1000px) rotateX(5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: perspective(1000px) rotateX(0deg) translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffd93d;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #4ecdc4;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+        }
+
+        .benefit-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #ffd93d;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: #1a1a2e;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            background: #1a1a2e;
+            color: #ffffff;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .warning-box {
+            background: rgba(255, 107, 107, 0.2);
+            border: 2px solid #ff6b6b;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .opportunity-box {
+            background: rgba(78, 205, 196, 0.2);
+            border: 2px solid #4ecdc4;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .slide-title {
+                font-size: 2em;
+            }
+            
+            .slide {
+                padding: 20px;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-element" style="top: 10%; left: 10%;"></div>
+    <div class="floating-element" style="top: 60%; right: 10%; animation-delay: -2s;"></div>
+    <div class="floating-element" style="bottom: 10%; left: 20%; animation-delay: -4s;"></div>
+
+    <div class="presentation-container">
+        <!-- Slide 1: Título -->
+        <div class="slide animate-fade-in">
+            <div class="slide-title">💰 OPORTUNIDADE ESTRATÉGICA</div>
+            <div class="slide-subtitle">Investimento Imobiliário via Construtoras</div>
+            <div class="highlight-box">
+                <strong>Momento ideal para investir:</strong> IOF impacta mercado financeiro e câmbio, mas não afeta o setor imobiliário estruturado!
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <div style="font-size: 1.3em; color: #4ecdc4;">
+                    📅 <strong>Contexto:</strong> Decisão STF - Alexandre de Moraes | 18 de julho de 2025
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Contexto IOF -->
+        <div class="slide animate-fade-in">
+            <div class="slide-title">📉 IMPACTO DA DECISÃO DO STF</div>
+            <div class="slide-subtitle">IOF e Cenário Econômico Atual</div>
+            
+            <div class="warning-box">
+                <h3>⚠️ Decisão do Ministro Alexandre de Moraes - 18/07/2025</h3>
+                <p><strong>Manutenção do IOF em operações de crédito e câmbio</strong> dentro dos limites constitucionais</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>💸 Impactos Negativos:</h3>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Operações de câmbio menos atrativas</li>
+                        <li>Spread bancário e CET elevados</li>
+                        <li>Menor margem líquida após IOF</li>
+                        <li>Recuo de investidores estrangeiros</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>📊 Setores Afetados:</h3>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Mercado de câmbio (dólar)</li>
+                        <li>Renda fixa de curto prazo</li>
+                        <li>Operações de crédito</li>
+                        <li>Instrumentos financeiros tradicionais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Oportunidade Imobiliária -->
+        <div class="slide animate-fade-in">
+            <div class="slide-title">🏗️ A OPORTUNIDADE</div>
+            <div class="slide-subtitle">Setor Imobiliário Aquecido</div>
+            
+            <div class="opportunity-box">
+                <h3>🎯 Enquanto o mercado financeiro sofre, o setor imobiliário prospera!</h3>
+                <p>Participação direta em projetos imobiliários com construtoras garante proteção e rentabilidade superior.</p>
+            </div>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <h4>Proteção Cambial</h4>
+                    <p>Ativo real, valorização indexada ao INCC/IPCA</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <h4>Alta Rentabilidade</h4>
+                    <p>Potencial superior a 20% a.a. em ciclos de 12-24 meses</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏠</div>
+                    <h4>Garantia Real</h4>
+                    <p>Terreno, matrícula ou percentual de obra como garantia</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💎</div>
+                    <h4>Sem IOF</h4>
+                    <p>Aportes via SCP ou contrato de mútuo isentos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Comparativo -->
+        <div class="slide animate-fade-in">
+            <div class="slide-title">💸 COMPARATIVO DE INVESTIMENTOS</div>
+            <div class="slide-subtitle">Análise Detalhada de Rentabilidade</div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Investimento</th>
+                        <th>Rentabilidade a.a.</th>
+                        <th>IOF</th>
+                        <th>Risco Cambial</th>
+                        <th>Garantia Real</th>
+                        <th>Liquidez</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🏗️ Construtora</strong></td>
+                        <td><strong>18% a 26%</strong></td>
+                        <td><strong>❌ NÃO</strong></td>
+                        <td><strong>❌ NÃO</strong></td>
+                        <td><strong>✅ SIM</strong></td>
+                        <td>Média</td>
+                    </tr>
+                    <tr>
+                        <td>Renda Fixa (CDI)</td>
+                        <td>10% a 11%</td>
+                        <td>✅ SIM</td>
+                        <td>❌ NÃO</td>
+                        <td>❌ NÃO</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>Dólar (Câmbio)</td>
+                        <td>6% a 8%</td>
+                        <td>✅ SIM</td>
+                        <td>✅ SIM</td>
+                        <td>❌ NÃO</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>Fundos Imobiliários</td>
+                        <td>9% a 11%</td>
+                        <td>❌ NÃO</td>
+                        <td>❌ NÃO</td>
+                        <td>Parcial</td>
+                        <td>Alta</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slide 5: Exemplo Prático -->
+        <div class="slide animate-fade-in">
+            <div class="slide-title">📊 SIMULAÇÃO REAL</div>
+            <div class="slide-subtitle">Projeto de 18 Meses</div>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-number">R$ 100k</span>
+                    <span class="stat-label">Investimento Inicial</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">22%</span>
+                    <span class="stat-label">Retorno Líquido</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">R$ 22k</span>
+                    <span class="stat-label">Lucro Estimado</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Meses de Ciclo</span>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>🏗️ Modelo de Negócio:</h3>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Participação em aquisição de terreno</li>
+                        <li>Construção de 6 unidades residenciais</li>
+                        <li>Gestão profissional da construtora</li>
+                        <li>Venda no mercado aquecido</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>🎯 Diferenciais:</h3>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li><strong>Sem IOF</strong> - economia imediata</li>
+                        <li><strong>Sem risco cambial</strong> - moeda nacional</li>
+                        <li><strong>Lastro real</strong> - matrícula registrada</li>
+                        <li><strong>Transparência total</strong> - acompanhamento da obra</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Estratégia -->
+        <div class="slide animate-fade-in">
+            <div class="slide-title">💡 ESTRATÉGIA DE INVESTIMENTO</div>
+            <div class="slide-subtitle">Modelo Estruturado de Participação</div>
+            
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>🎯 Segmentação:</h3>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Investidores de médio prazo (12-24 meses)</li>
+                        <li>Cotas participativas em projetos</li>
+                        <li>Rentabilidade alvo: 1,5% a 2,2% ao mês</li>
+                        <li>Diversificação por tipo de projeto</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>📋 Documentação:</h3>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Relatórios de retorno vs. mercado</li>
+                        <li>Demonstração de valorização</li>
+                        <li>Garantias documentadas</li>
+                        <li>Estrutura jurídica transparente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>"Dólar protege patrimônio, mas não constrói riqueza no Brasil.<br>
+                O ativo que você pode visitar, tocar e transformar em receita é o imóvel."</strong>
+            </div>
+        </div>
+
+        <!-- Slide 7: Conclusão -->
+        <div class="slide animate-fade-in">
+            <div class="slide-title">✅ CONCLUSÃO</div>
+            <div class="slide-subtitle">A Escolha Inteligente</div>
+            
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>🔥 Cenário Atual:</h3>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Instabilidade cambial</li>
+                        <li>Pressão tributária (IOF)</li>
+                        <li>Volatilidade do mercado financeiro</li>
+                        <li>Incertezas econômicas</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>🏆 Solução Imobiliária:</h3>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Alternativa mais sólida</li>
+                        <li>Segurança com rentabilidade</li>
+                        <li>Proteção contra volatilidade</li>
+                        <li>Previsibilidade de lucro</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Com estruturação jurídica adequada e garantias reais, o investidor torna-se sócio de um empreendimento com previsibilidade de lucro e proteção contra volatilidade.</strong>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <div class="cta-section">
+            <h2>🚀 PRONTO PARA INVESTIR NO FUTURO?</h2>
+            <p style="font-size: 1.2em; margin: 20px 0;">Junte-se aos investidores inteligentes que escolheram o setor imobiliário como refúgio seguro e rentável em tempos de incerteza.</p>
+            <button class="cta-button" onclick="alert('Entre em contato para mais informações sobre oportunidades de investimento!')">
+                QUERO CONHECER AS OPORTUNIDADES
+            </button>
+            <div style="margin-top: 30px; font-size: 0.9em;">
+                <p>📞 <strong>Contato:</strong> Agende uma apresentação personalizada</p>
+                <p>📧 <strong>Email:</strong> Receba o material completo</p>
+                <p>🏢 <strong>Escritório:</strong> Visite nossos projetos em andamento</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Adicionar animações quando elementos entram na viewport
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide').forEach(slide => {
+            observer.observe(slide);
+        });
+
+        // Adicionar efeito de hover nos cards
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) translateY(-10px) scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(5deg) translateY(0px) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
